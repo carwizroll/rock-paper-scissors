@@ -12,3 +12,16 @@ function getComputerChoice() {
 
 getComputerChoice();
 
+function getHumanChoice() {
+    let humanGuess = prompt ("Enter your guess");
+    console.log(humanGuess);
+}
+
+getHumanChoice();
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound () {
+    
+}
