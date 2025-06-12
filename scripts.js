@@ -23,3 +23,14 @@ if (computerNumber === 1) {
 console.log(computerChoice);
 
 // This is the end of the section that gets the computer choice.
+
+// This is the start of the section that gets the human choice.
+
+function getHumanChoice () {
+let humanGuess = prompt ("Enter your choice!", "");
+return humanGuess;
+}
+
+console.log(getHumanChoice());
+
+// This is the end of the section that gets the human choice.
