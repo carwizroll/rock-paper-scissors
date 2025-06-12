@@ -2,6 +2,7 @@
 
 let humanScore = 0;
 let computerScore = 0;
+let currentRound = 1;
 
 // This is the end of the declaration of the human's score
 
@@ -43,16 +44,45 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice === "SCISSORS" && computerChoice === "PAPER")
     ) {
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-        ++humanScore;
+        humanScore++;
     } else {
         console.log(`You lose! ${computerChoice} beats ${humanChoice}`)
-        ++computerScore;
+        computerScore++;
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
 
 // This is the end of the section that plays a round.
+
+// This is the start of the section that plays a game.
+
+function playGame () {
+    if (currentRound === 1) {
+        humanScore = 0;
+        computerScore = 0;
+    }
+    if (currentRound <= 5) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+
+        currentRound++;
+        playGame();
+
+    } else {
+        console.log("Game Over!")
+        if (humanScore > computerScore) {
+            console.log(`You win! ${humanScore} to ${computerScore}`);
+        } else if (humanScore < computerScore) {
+            console.log(`You lose! ${humanScore} to ${computerScore}`);
+        } else {
+            console.log(`Tie! ${humanScore} to ${computerScore}`);
+        }
+        currentRound = 1;
+    }
+}
+
+// This is the end of the section that plays a game.
+
+playGame();
