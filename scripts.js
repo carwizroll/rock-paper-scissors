@@ -1,10 +1,6 @@
-// This is the declaration of the human's score
-
 let humanScore = 0;
 let computerScore = 0;
 let currentRound = 1;
-
-// This is the end of the declaration of the human's score
 
 // This is the start of the the section that gets the computer choice.
 
@@ -49,9 +45,10 @@ function playRound(humanChoice, computerChoice) {
         console.log(`You lose! ${computerChoice} beats ${humanChoice}`)
         computerScore++;
     }
+
+    console.log(`Round - ${currentRound}
+        Human Score: ${humanScore} Computer Score: ${computerScore}`);
 }
-
-
 
 // This is the end of the section that plays a round.
 
